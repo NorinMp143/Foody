@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body><h1>User settings for {{username}}</h1>
+
+<form action="/update_settings" method="get" class="user-settings">
+
+<div class="user-settings-block">
+  <div class="user-settings-label">Email address (cannot be changed):</div>
+  {{user.email}}
+  <input type="hidden" name="u" value="{{user.email}}">
+</div>
+<div class="user-settings-block">
+  <div class="user-settings-label">Avatar (pulled from Gravatar):</div>
+  Go to <a href="http://gravatar.com/">gravatar.com</a> and add an avatar for the email address {{user.email}}.
+</div>
+
+
+<div class="user-settings-block">
+  <label class="user-settings-label" for="category">Category:</label>
+  <input id="category" type="text" name="category" value="{{user.category}}">
+</div>
+
+<fieldset class="user-settings-block">
+  <legend class="user-settings-label">
+    Interpret snippets as <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a> by default?
+  </legend>
+  <input id="markdown-yes" type="radio" name="markdown" value="yes"
+         {% if user.uses_markdown %}checked{% endif %}>
+         <label for="markdown-yes">yes</label>
+  <input id="markdown-no" type="radio" name="markdown" value="no"
+         {% if not user.uses_markdown %}checked{% endif %}>
+         <label for="markdown-no">no</label>
+</fieldset>
+
+<fieldset class="user-settings-block">
+  <legend class="user-settings-label">Have snippets be private by default?:</legend>
+  <input id="private-yes" type="radio" name="private" value="yes"
+         {% if user.private_snippets %}checked{% endif %}>
+         <label for="private-yes">yes</label>
+  <input id="private-no" type="radio" name="private" value="no"
+         {% if not user.private_snippets %}checked{% endif %}>
+         <label for="private-no">no</label>
+</fieldset>
+
+<fieldset class="user-settings-block">
+  <legend class="user-settings-label">Receive reminder emails?:</legend>
+  <input id="reminder-email-yes" type="radio" name="reminder_email" value="yes"
+         {% if user.wants_email %}checked{% endif %}>
+         <label for="reminder-email-yes">yes</label>
+  <input id="reminder-email-no" type="radio" name="reminder_email" value="no"
+         {% if not user.wants_email %}checked{% endif %}>
+         <label for="reminder-email-no">no</label>
+</fieldset>
+
+<div class="user-settings-block">
+  <label class="user-settings-label" for="to-view">
+    Email addresses of people to view snippets of:
+  </label>
+  <textarea id="to-view" class="user-settings-textarea" name="to_view" rows="4" cols="60">{{wants_to_view}}</textarea>
+  <div>
+    (regexp, one per line, "all" for everybody)<br>
+    (TODO(csilvers): this field is currently ignored)<br>
+  </div>
+</div>
+
+<input type="hidden" name="redirect_to" value="{{redirect_to}}">
+
+<input class="button save-button" type="submit" name="save" value="Save">
+
+{# It doesn't make sense for a not-yet-created user to delete themselves #}
+{% if not is_new_user %}
+<hr>
+
+<h1>Delete! Delete!</h1>
+
+<p>You can delete your account if you no longer want to be part of the
+  snippet system.  You can also hide your account if you want to take
+  a break from snippets.</p>
+
+<p><b>IMPORTANT NOTE:</b> deleting your account does <i>not</i> delete
+  your historical snippets -- they are still visible.  All it does is
+  make it so no snippets show up for you in future weeks.  You also no
+  longer get reminder emails.</p>
+
+<p>Hiding is similar to deleting, except that your account is
+  automatically re-created, with its settings intact, the next time
+  you enter a snippet.  It is appropriate if you want to take an
+  extended break from snippets -- for instance for a sabbatical year
+  -- but may come back to them later.</p>
+
+<input class="button hide-button" type="submit" name="hide" value="Hide">
+<input class="button delete-button" type="submit" name="delete" value="Delete">
+{% endif %}
+
+</form>
+</body>
+</html>

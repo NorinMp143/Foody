@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ABC</title>
+	<style>
+	   *{margin: 0;padding: 0;}
+	   body{margin-right: 0;}
+	   .block
+	   {
+	   	display: grid;grid-gap: 0px;
+	   	grid-template-areas: 
+	   	'd1 d1 d1 d1 d1 d1'
+	   	'd2 d2 d2 d2 d2 d2'
+	   	'd3 d3 d3 d3 d3 d3'
+	   	'd4 d4 d4 d4 d4 d4'
+	   }
+	   #d1{grid-area: d1;}#d2{grid-area: d2;}#d3{grid-area: d3;}#d4{grid-area: d4;}
+		.grid-container
+		{
+            display: grid;
+            grid-gap:0px;
+            grid-template-areas: 
+            'd1 d1 d1 d1 d1 d1'
+            'd2 d2 d2 d3 d3 d3'
+            'd4 d4 d5 d5 d6 d6'
+            'd7 d7 d7 d8 d8 d8'
+            'd9 d9 d9 d9 d9 d9'
+            'd10 d10 d10 d11 d11 d11'
+            'd12 d12 d13 d13 d14 d14'
+            'd15 d15 d15 d16 d16 d16'
+            'd17 d17 d17 d17 d17 d17'
+            'd18 d18 d18 d19 d19 d19'
+		}
+		.i1{grid-area: d1;}.i6{grid-area: d6;}.i11{grid-area: d11;}.i16{grid-area: d16;}
+		.i2{grid-area: d2;}.i7{grid-area: d7;}.i12{grid-area: d12;}.i17{grid-area: d17;}
+		.i3{grid-area: d3;}.i8{grid-area: d8;}.i13{grid-area: d13;}.i18{grid-area: d18;}
+		.i4{grid-area: d4;}.i9{grid-area: d9;}.i14{grid-area: d14;}.i19{grid-area: d19;}
+		.i5{grid-area: d5;}.i10{grid-area: d10;}.i15{grid-area: d15;}
+		.grid-container>div
+		{
+			background-color:silver;
+			color:white;
+			font-family: cursive;
+			text-align: center;
+			padding: 0;
+		}
+		img{margin:0;}
+		.i5>img{width: 100%;padding: 0;height: 400px;}.i10>img{width:100%;padding:0;height: 400px;}.i11>img{width: 100%;padding:0;height: 400px;}.i16>img{width:100%;padding:0;height: 400px;}
+		.i4>img{width: 100%;padding: 0;height: 400px;}.i9>img{width:100%;padding:0;height: 500px;}.i12>img{width: 100%;padding:0;height: 400px;}.i17>img{width:100%;padding:0;height: 500px;}
+		.i3>img{width: 100%;padding:0;height: 400px;}.i8>img{width: 100%;padding:0;height: 400px;}.i13>img{width:100%;padding: 0;height: 400px;}.i18>img{width: 100%;padding:0;height: 400px;}
+		.i1>img{width: 100%;padding:0;height: 500px;}.i7>img{width: 100%;padding:0;height: 400px;}.i14>img{width: 100%;padding:0;height: 400px;}.i19>img{width: 100%;padding:0;height: 400px;}
+		.i2>img{width: 100%;padding: 0;height: 400px;}.i6>img{width: 100%;padding:0;height: 400px;}.i15>img{width: 100%;padding: 0;height: 400px;}
+		img:hover
+		{
+			transform: scale(1.1);
+		}
+		.box
+		{
+			width: 100%;height: 70px;background-color: #Eb22EB;
+		}
+		.body
+		{
+			margin-left: 500px;
+		}
+		.body>span
+		{
+           padding: 15px;background-color: #ffffff;margin-top: 15px;display:inline-flex;font-weight: bold;border-radius: 2px;
+		}
+		.body>span:hover
+		{
+			transform: scale(1.1);background-color: #2bff2b;font-size: 20px;
+		}
+		a{text-decoration: none;}.body>span a:hover{color: black;}
+		.contact
+{
+	float: left;width: 100%;background:#d6805a;padding: 20px 0;
+}
+.contact .contect_left
+{
+	width: 65%;float: left;
+}
+.contact .contect_left h5
+{
+    color:#fff;font-size: 40px;line-height: 70px;font-weight:normal;
+}
+.contact .contect_right
+{
+	width: 35%;float: left;
+}
+.contact .contect_right .btn
+{
+	float: right;background:#fff;padding: 20px;font-size: 30px;font-weight: bold;color: #2b2b2b;margin-right: 20px;
+}
+
+.footer_holder
+{
+	width: 100%;float: left;background:#2b2b2b;color: #fff;padding:20px;
+}
+.footer_holder span
+{
+	text-align: center;width: 100%;float: left;font-size: 20px;line-height: 30px;
+}
+.header_holder
+{
+	float: left;width: 100%;background-color: #5dba5d;
+}
+.header_holder .logo_box
+{
+	float: left;padding: 30px 0px 15px 20px;
+}
+#nag
+{
+   float: right;padding: 30px 0px;
+}
+#nag ul
+{
+   float: right;list-style: none;
+}
+#nag ul li
+{
+   color:black;float: left;display:block;padding: 10px 15px;
+}
+#nag ul li a
+{
+   color: #FFF;font-size: 22px;
+}
+#nag ul li a:hover
+{
+   background-color:#ff0000;padding: 50px 0px 50px 0px;color: green;
+}
+
+	</style>
+</head>
+<body>
+<div class="block">
+  <div id="d1">
+	<header class="header_holder">
+		<div class="container">
+		<div class="logo_box">
+			<img src="cook.png">
+		</div>
+
+	<nav id="nag">
+		<ul>
+			<li><a href="start.html">Home</a></li>
+                <li><a href="AR.htm">Restaurant</a></li>
+                <li><a href="grid.html">Gallery</a></li>
+                <li><a href="UA.htm">Account</a></li>
+                <li><a href="Subscribe.htm">Subscribe</a></li>
+                <li><a href="start.html#footer">About</a></li>
+		</ul>
+	</nav>
+	</div>
+	</header>
+</div>
+<div id="d2"class="grid-container">
+	<div class="i1"><img src="images (3).jpeg"></div>
+	<div class="i2"><img src="images (4).jpeg"></div>
+	<div class="i3"><img src="images (5).jpeg"></div>
+	<div class="i4"><img src="images (6).jpeg"></div>
+	<div class="i5"><img src="images (7).jpeg"></div>
+	<div class="i6"><img src="images (8).jpeg"></div>
+	<div class="i7"><img src="images (9).jpeg"></div>
+	<div class="i8"><img src="images (10).jpeg"></div>
+	<div class="i9"><img src="images (11).jpeg"></div>
+	<div class="i10"><img src="images (12).jpeg"></div>
+	<div class="i11"><img src="images (13).jpeg"></div>
+	<div class="i12"><img src="images (14).jpeg"></div>
+	<div class="i13"><img src="images (15).jpeg"></div>
+	<div class="i14"><img src="2.jpg"></div>
+	<div class="i15"><img src="3.jpg"></div>
+	<div class="i16"><img src="4.jpg"></div>
+	<div class="i17"><img src="5.jpg"></div>
+	<div class="i18"><img src="6.jpg"></div>
+	<div class="i19"><img src="7.jpg"></div>
+</div>
+<div id="d3"class="box">
+	<div class="body">
+		<span><a href="grid.html">1</a></span>
+		<span><a href="grid2.html">2</a></span>
+		<span><a href="grid3.html">3</a></span><b> ..... </b>
+		<span><a href="grid2.html">NEXT</a></span>
+	</div>
+</div>
+<div id="d4"class="contact">
+		<div class="container">
+			<div class="contect_left">
+				<h5>Our Support is Available 24 X 7</h5>
+			</div>
+			<div class="contect_right">
+				<a href="feedback.html" class="btn">FEEDBACK FOR US</a>
+			</div>
+		</div>
+	</div>
+</div>
+	<footer class="footer_holder">
+		<span>Made By Group X Of K17RG</span>
+	</footer>
+</body>
+</html>

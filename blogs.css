@@ -1,0 +1,46 @@
+*
+{
+  padding: 0;
+  margin: 0;
+
+}
+#mainbody
+{
+  width: 90%;
+  margin-left: 5%;
+  background-color: rgb(0,105,110);
+  position: absolute;
+
+}
+#title
+{
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;padding: 1%;
+}
+
+#content
+{
+  color: white;
+  font-weight: bold;
+  width: 80%;
+  margin:0 auto;
+}
+#content a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+#imeage
+{
+  width: 70%;
+  margin: 0 auto;
+  background: red;
+}
+#imeage img
+{
+  width:100%;
+  max-height: 450px;
+}
